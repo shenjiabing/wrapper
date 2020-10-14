@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+    compileSdkVersion ANDROID_COMPILE_SDK_VERSION as int
+
+    defaultConfig {
+        minSdkVersion ANDROID_MIN_SDK_VERSION
+        targetSdkVersion ANDROID_TARGET_SDK_VERSION
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'com.alibaba:fastjson:1.1.59.android'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
+artifacts {
+    archives androidSourcesJar
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            if(UPLOAD_WIDGET_MAVEN.toBoolean()) {
+                snapshotRepository(url: config.MAVEN_REPO_SNAPSHOT_URL) {
+                    authentication(userName: config.NEXUS_USERNAME, password: config.NEXUS_PASSWORD)
+                }
+                repository(url: config.MAVEN_REPO_RELEASE_URL) {
+                    authentication(userName: config.NEXUS_USERNAME, password: config.NEXUS_PASSWORD)
+                }
+                pom.project {
+                    version '0.1.0-SNAPSHOT'
+                    artifactId 'widget'
+                    groupId GROUP_ID
+                    packaging TYPE
+                    description DESCRIPTION
+                }
+            }else{
+                repository(url: mavenLocal().getUrl())
+                snapshotRepository(url: mavenLocal().getUrl())
+                pom.project {
+                    version '0.1.0-SNAPSHOT'
+                    artifactId 'widget'
+                    groupId GROUP_ID
+                    packaging TYPE
+                    description DESCRIPTION
+                }
+            }
+        }
+    }
+}
+

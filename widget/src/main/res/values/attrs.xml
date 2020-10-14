@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tag_saved_child_recycler_view" type="id" />
+
+    <declare-styleable name="NestedRefreshLayout">
+        <attr name="pullView" format="integer" />
+        <attr name="pullViewHeight" format="dimension|reference" />
+        <attr name="pullMinViewHeight" format="dimension|reference" />
+        <attr name="pullMaxHeight" format="dimension|reference" />
+        <attr name="refreshHeight" format="dimension|reference" />
+        <attr name="animPlayDuration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="HorizontalProgressBar">
+        <attr name="hpb_padding" format="dimension" />
+        <attr name="hpb_bg_color" format="color|reference" />
+        <attr name="hpb_pb_color" format="color|reference" />
+        <attr name="hpb_second_pb_color" format="color|reference" />
+        <attr name="hpb_max" format="integer" />
+        <attr name="hpb_progress" format="integer" />
+        <attr name="hpb_show_second_progress" format="boolean" />
+        <attr name="hpb_second_progress" format="integer" />
+        <attr name="hpb_show_second_point_shape" format="enum">
+            <enum name="point" value="0" />
+            <enum name="line" value="1" />
+        </attr>
+        <attr name="hpb_open_gradient" format="boolean" />
+        <attr name="hpb_gradient_from" format="color|reference" />
+        <attr name="hpb_gradient_to" format="color|reference" />
+        <attr name="hpb_open_second_gradient" format="boolean" />
+        <attr name="hpb_second_gradient_from" format="color|reference" />
+        <attr name="hpb_second_gradient_to" format="color|reference" />
+    </declare-styleable>
+
+    <!--自定义TextView  附加图片的大小，用于兼容适配-->
+    <declare-styleable name="DrawableTextView">
+        <attr name="leftDrawable" format="reference" />
+        <attr name="topDrawable" format="reference" />
+        <attr name="rightDrawable" format="reference" />
+        <attr name="bottomDrawable" format="reference" />
+        <attr name="drawableWidth" format="dimension" />
+        <attr name="drawableHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="VerificationInputView">
+        <attr name="box" format="integer" />
+        <attr name="child_h_padding" format="dimension" />
+        <attr name="child_v_padding" format="dimension" />
+        <attr name="child_width" format="dimension" />
+        <attr name="child_height" format="dimension" />
+        <attr name="padding" format="dimension" />
+        <attr name="box_bg_focus" format="reference" />
+        <attr name="box_bg_normal" format="reference" />
+        <attr name="inputType" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="SelectableRoundedImageView">
+        <attr name="sriv_left_top_corner_radius" format="dimension" />
+        <attr name="sriv_right_top_corner_radius" format="dimension" />
+        <attr name="sriv_left_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_right_bottom_corner_radius" format="dimension" />
+        <attr name="sriv_corner_radius" format="dimension" />
+        <attr name="sriv_border_width" format="dimension" />
+        <attr name="sriv_border_color" format="color" />
+        <attr name="sriv_oval" format="boolean" />
+        <attr name="android:scaleType" />
+    </declare-styleable>
+
+</resources>

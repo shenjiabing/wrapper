@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_fore">#FFFFFF</color><!--前景色-->
+    <color name="color_back">#F5F5F5</color><!--后景色-->
+    <!--字体颜色-->
+    <color name="text_super">#000000</color>
+    <color name="text_main">#333333</color>
+    <color name="text_minor">#666666</color>
+    <color name="text_lesser">#999999</color>
+
+    <color name="color_divider">#EEEEEE</color>
+</resources>

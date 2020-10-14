@@ -1,0 +1,6 @@
+include ':wrapper-mvp'
+include ':wrapper-core'
+include ':wrapper-http'
+include ':wrapper-mvvm'
+include ':app2'
+include ':app', ':widget', ':wrapper'

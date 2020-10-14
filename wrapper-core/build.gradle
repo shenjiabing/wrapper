@@ -1,0 +1,76 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion ANDROID_COMPILE_SDK_VERSION as int
+
+    defaultConfig {
+        minSdkVersion ANDROID_MIN_SDK_VERSION
+        targetSdkVersion ANDROID_TARGET_SDK_VERSION
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    api 'androidx.appcompat:appcompat:1.2.0'
+    api 'com.sayweee.libs:logger:0.0.4'
+    api 'com.sayweee.libs:scheduler:0.0.3'
+    api 'me.winds.status:status-lib:1.0.3'
+}
+
+apply plugin: 'maven'
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
+artifacts {
+    archives androidSourcesJar
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories {
+        mavenDeployer {
+            if(UPLOAD_WRAPPER_CORE_MAVEN.toBoolean()) {
+                snapshotRepository(url: config.MAVEN_REPO_SNAPSHOT_URL) {
+                    authentication(userName: config.NEXUS_USERNAME, password: config.NEXUS_PASSWORD)
+                }
+                repository(url: config.MAVEN_REPO_RELEASE_URL) {
+                    authentication(userName: config.NEXUS_USERNAME, password: config.NEXUS_PASSWORD)
+                }
+                pom.project {
+                    version '0.0.1-SNAPSHOT'
+                    artifactId 'wrapper-core'
+                    groupId GROUP_ID
+                    packaging TYPE
+                    description DESCRIPTION
+                }
+            }else{
+                repository(url: mavenLocal().getUrl())
+                snapshotRepository(url: mavenLocal().getUrl())
+                pom.project {
+                    version '0.0.1-SNAPSHOT'
+                    artifactId 'wrapper-core'
+                    groupId GROUP_ID
+                    packaging TYPE
+                    description DESCRIPTION
+                }
+            }
+        }
+    }
+}
+
+
+
