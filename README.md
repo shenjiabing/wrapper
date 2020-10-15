@@ -30,32 +30,32 @@
 + 提供合适的注释和提示
     > 关键环节的关联上，如何使用不合理提供提示说明     
 + 提供混淆
-    > 各library单独混淆               
+    > 各library单独混淆                       
 
 
 ## 实现
-+ wrapper-core
-    > 通用基类实现，提供上层使用 
-    > 提供通用回调和扩展工具类  
-    > 提供简单配置的能力 
++ wrapper-core      
+    > 通用基类实现，提供上层使用         
+    > 提供通用回调和扩展工具类       
+    > 提供简单配置的能力         
 
-+ wrapper-http
-    > 网络请求封装
-    > 提示通用bean类
-    > 提供兼容解析方案
-    > 和其他库解耦
++ wrapper-http      
+    > 网络请求封装        
+    > 提示通用bean类     
+    > 提供兼容解析方案      
+    > 和其他库解耦        
                                   
 + wrapper-mvp
-    > 提供mvp方案实现，整体分成3层 view、presenter、model
-    > 提供状态方案实现  
-    > 简化http请求流程
-    > 简化m层数据分发 
-    > 最小改动兼容原有方案 
+    > 提供mvp方案实现，整体分成3层 view、presenter、model     
+    > 提供状态方案实现       
+    > 简化http请求流程        
+    > 简化m层数据分发      
+    > 最小改动兼容原有方案        
                   
 + wrapper-mvvm
-    > 提供mvvm方案实现，整体分成4层 view、view model、model、service，service层是model层的扩展，用于为model层提供能力支持
-    > 提供状态方案实现  
-    > 简化m层和vm层的关联
-    > 简化m层和service层的关联，提供自动注入功能
-    > 提供m层和vm层生命周期支持
-    > 提供通用数据分发方案
+    > 提供mvvm方案实现，整体分成4层 view、view model、model、service，service层是model层的扩展，用于为model层提供能力支持        
+    > 提供状态方案实现        
+    > 简化m层和vm层的关联       
+    > 简化m层和service层的关联，提供自动注入功能     
+    > 提供m层和vm层生命周期支持        
+    > 提供通用数据分发方案        
