@@ -23,21 +23,18 @@ public class TestActivity extends WrapperBindingActivity<TestViewModel, Activity
         return R.layout.activity_test;
     }
 
-    /**
-     * model层数据关联
-     */
     @Override
-    public void initView(Bundle savedInstanceState) {
+    public void attachModel() {
+
+    }
+
+    @Override
+    public void initView(View view, Bundle savedInstanceState) {
         binding.btnTestN.setOnClickListener(this);
         binding.btnTestVoid.setOnClickListener(this);
         binding.btnTestNormal.setOnClickListener(this);
     }
 
-
-    @Override
-    public void attachModel() {
-
-    }
 
     /**
      * 数据加载

@@ -24,7 +24,7 @@ public class LaunchActivity extends WrapperMvvmActivity<LaunchViewModel> impleme
     }
 
     @Override
-    public void initView(Bundle savedInstanceState) {
+    public void initView(View view, Bundle savedInstanceState) {
         findViewById(R.id.btn_test_n).setOnClickListener(this);
         findViewById(R.id.btn_test_normal).setOnClickListener(this);
         findViewById(R.id.btn_test_void).setOnClickListener(this);

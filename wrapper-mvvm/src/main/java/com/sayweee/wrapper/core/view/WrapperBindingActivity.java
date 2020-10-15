@@ -55,7 +55,7 @@ public abstract class WrapperBindingActivity<VM extends BaseViewModel<? extends 
     public void injectBinding() {
         if (useWrapper()) {
             setContentView(R.layout.activity_wrapper);
-            FrameLayout container = findViewById(R.id.container);
+            FrameLayout container = findViewById(R.id.layout_wrapper_container);
             binding = DataBindingUtil.bind(View.inflate(this, getLayoutRes(), null));
             container.addView(binding.getRoot());
         } else {

@@ -44,7 +44,7 @@ public class TestViewModel extends BaseViewModel<TestHttpLoader> {
                     @Override
                     public void onBegin() {
                         super.onBegin();
-                        loadingStatus.setValue(true);
+                        setLoadingStatus(true);
                     }
 
                     @Override
@@ -55,7 +55,7 @@ public class TestViewModel extends BaseViewModel<TestHttpLoader> {
                     @Override
                     public void onFinish() {
                         super.onFinish();
-                        loadingStatus.setValue(false);
+                        setLoadingStatus(false);
                     }
                 });
     }
@@ -143,7 +143,7 @@ public class TestViewModel extends BaseViewModel<TestHttpLoader> {
                     @Override
                     public void onBegin() {
                         super.onBegin();
-                        loadingStatus.setValue(true);
+                        setLoadingStatus(true);
                     }
 
                     @Override
@@ -154,7 +154,7 @@ public class TestViewModel extends BaseViewModel<TestHttpLoader> {
                     @Override
                     public void onFinish() {
                         super.onFinish();
-                        loadingStatus.setValue(false);
+                        setLoadingStatus(false);
                     }
                 });
     }

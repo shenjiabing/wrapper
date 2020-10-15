@@ -112,6 +112,12 @@ public class BaseViewModel<M extends BaseModel> extends AndroidViewModel impleme
         }
     }
 
+    public void injectModel(BaseModel model) {
+        if(model != null) {
+            this.loader = (M) model;
+        }
+    }
+
     /**
      * 自动关联model
      *
@@ -150,7 +156,11 @@ public class BaseViewModel<M extends BaseModel> extends AndroidViewModel impleme
                                 service = arguments[0];
                             }
                             if (service != null) {
-                                clazz = Class.forName(service.getTypeName());
+                                if (service instanceof Class<?>) {
+                                    clazz = (Class) service;
+                                } else {
+                                    clazz = Class.forName(service.getTypeName());
+                                }
                                 if (clazz != null) {
                                     ((BaseLoaderModel) m).inject(clazz);
                                 }
@@ -240,10 +250,10 @@ public class BaseViewModel<M extends BaseModel> extends AndroidViewModel impleme
     /**
      * 设置loading状态
      *
-     * @param isAdd
+     * @param isShow
      */
-    public void setLoadingStatus(boolean isAdd) {
-        count = isAdd ? count + 1 : count - 1;
+    public void setLoadingStatus(boolean isShow) {
+        count = isShow ? count + 1 : count - 1;
         count = Math.max(count, 0);
         if (!forceDisableShow) {
             loadingStatus.postValue(count > 0);

@@ -21,7 +21,7 @@ import io.reactivex.functions.Consumer;
  */
 public class BaseLoaderModel<S> extends BaseModel implements ILoaderModel<S>, Consumer<Disposable> {
 
-    protected S service;
+    public S service;
     protected CompositeDisposable disposables;
 
     @Override

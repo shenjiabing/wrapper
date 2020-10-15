@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.sayweee.app2.launch.LaunchActivity;
+import com.sayweee.app2.rx.RxTestActivity;
 import com.sayweee.app2.test.TestActivity;
 
 
@@ -25,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_launch:
                 startActivity(new Intent(this, LaunchActivity.class));
+                break;
+                case R.id.btn_rx:
+                startActivity(new Intent(this, RxTestActivity.class));
                 break;
         }
     }

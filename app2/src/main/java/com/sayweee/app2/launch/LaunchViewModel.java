@@ -44,7 +44,7 @@ public class LaunchViewModel extends BaseViewModel<BaseLoaderModel<LaunchApi>> {
                     @Override
                     public void onFinish() {
                         super.onFinish();
-                        setLoadingStatus(true);
+                        setLoadingStatus(false);
                     }
                 });
     }

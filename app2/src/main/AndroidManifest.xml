@@ -48,6 +48,7 @@
 
         <activity android:name="com.sayweee.app2.test.TestActivity" />
         <activity android:name="com.sayweee.app2.launch.LaunchActivity" />
+        <activity android:name="com.sayweee.app2.rx.RxTestActivity" />
     </application>
 
 </manifest>

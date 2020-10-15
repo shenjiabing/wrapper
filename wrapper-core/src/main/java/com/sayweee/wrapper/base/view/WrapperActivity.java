@@ -102,7 +102,7 @@ public abstract class WrapperActivity extends AppCompatActivity implements IView
     @Override
     public TitleView getWrapperTitle() {
         if (useWrapper()) {
-            return findViewById(R.id.title);
+            return findViewById(R.id.layout_wrapper_title);
         }
         return null;
     }
@@ -116,7 +116,7 @@ public abstract class WrapperActivity extends AppCompatActivity implements IView
     @Override
     public void setWrapperDivider(Drawable drawable) {
         if (useWrapper()) {
-            LinearLayout view = findViewById(R.id.root);
+            LinearLayout view = findViewById(R.id.layout_wrapper_root);
             view.setDividerDrawable(drawable);
         }
     }
@@ -152,7 +152,7 @@ public abstract class WrapperActivity extends AppCompatActivity implements IView
         this.activity = this;
         if (useWrapper()) {
             setContentView(R.layout.activity_wrapper);
-            FrameLayout container = findViewById(R.id.container);
+            FrameLayout container = findViewById(R.id.layout_wrapper_container);
             if (getLayoutRes() > 0) {
                 contentView = View.inflate(this, getLayoutRes(), null);
                 container.addView(contentView);
