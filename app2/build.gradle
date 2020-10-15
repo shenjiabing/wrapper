@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion ANDROID_COMPILE_SDK_VERSION as int
-    buildToolsVersion "30.0.0"
+//    buildToolsVersion "30.0.0"
 
     defaultConfig {
         applicationId "com.sayweee.app2"

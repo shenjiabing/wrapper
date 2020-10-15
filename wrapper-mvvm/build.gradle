@@ -43,14 +43,14 @@ dependencies {
     api 'io.reactivex.rxjava2:rxjava:2.2.19'
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
     //rx lifecycle
-    api 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
-    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
+//    api 'com.trello.rxlifecycle2:rxlifecycle:2.2.2'
+//    api 'com.trello.rxlifecycle2:rxlifecycle-components:2.2.2'
     //rx binding
     api 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
     //aac
-    api 'android.arch.lifecycle:extensions:1.1.1'
-    api 'android.arch.lifecycle:compiler:1.1.1'
-//    api 'androidx.lifecycle:lifecycle-compiler:2.0.0'
+    api 'android.arch.lifecycle:extensions:2.0.0'
+    //noinspection LifecycleAnnotationProcessorWithJava8
+    api 'android.arch.lifecycle:compiler:2.0.0'
 
     api 'com.sayweee.libs:logger:0.0.4'
     api 'com.sayweee.libs:scheduler:0.0.3'

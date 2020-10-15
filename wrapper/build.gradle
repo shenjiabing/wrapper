@@ -27,7 +27,7 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.appcompat:appcompat:1.2.0'
     //网络请求
 //    api 'com.squareup.retrofit2:retrofit:2.0.2'
 //    api 'com.squareup.retrofit2:converter-gson:2.0.2'
